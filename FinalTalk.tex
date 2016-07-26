@@ -1,0 +1,320 @@
+\documentclass[notheorems,envcountsect,allowframebreaks,xcolor=svgnames,8pt]{beamer}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{bookmark}
+\usepackage{amsmath}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{multimedia}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+%%%special symbols%%%
+
+\newcommand{\IS}{\mathbb{S}}
+\newcommand{\U}{{\bf U}}
+\newcommand{\V}{{\bf V}}
+\newcommand{\W}{{\bf W}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\SSS}{\mathfrak{S}}
+\newcommand{\dd}{\mathfrak{d}}
+\newcommand{\LL}{\mathcal{L}}
+\newcommand{\Lie}{\text{Lie}}
+\newcommand{\GG}{\mathcal{G}}
+\newcommand{\AAA}{\mathcal{A}}
+\newcommand{\PPP}{\mathcal{P}}
+\newcommand{\res}{\text{res}}
+\newcommand{\Mat}{\text{Mat}}
+\newcommand{\mm}{\mathfrak{m}}
+\newcommand{\RRR}{\mathcal{R}}
+\newcommand{\OOO}{\mathcal{O}}
+\newcommand{\Conj}{\mbox{Conj}}
+\newcommand{\Syl}{\mbox{Syl}}
+\newcommand{\Mod}{\mbox{ mod }}
+\newcommand{\Aut}{\mbox{Aut}}
+\newcommand{\Char}{\mbox{ char }}
+\newcommand{\ZZZ}{\mathcal{Z}}
+\newcommand{\oo}{$\ddot{\mbox{o}}$}
+\newcommand{\Tor}{\mbox{Tor}}
+\newcommand{\Hom}{\mbox{Hom}}
+\newcommand{\stt}{^{\mbox{\tiny{st}}}}
+\newcommand{\ndd}{^{\mbox{\tiny{nd}}}}
+\newcommand{\rdd}{^{\mbox{\tiny{rd}}}}
+\newcommand{\thh}{^{\mbox{\tiny{th}}}}
+\newcommand{\Gal}{\mbox{Gal}}
+\newcommand{\ii}{\mathfrak{i}}
+\newcommand{\bbox}{\hfill $\blacksquare$}
+\newcommand{\ep}{\\ \vspace{.001cm}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\cnn}{\mathbb{C}^{n \times n}}
+\newcommand{\diag}{\mbox{Diag}}
+\newcommand{\agl}{AGL(2,\ZZ)}
+\newcommand{\gl}{GL(2,\ZZ)}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\lcm}{\operatorname{lcm}}
+
+
+\definecolor{cornellred}{rgb}{0.75, 0.01, 0.1}
+
+\mode<presentation> {
+  \useoutertheme[footline=authorinstitutetitle]{miniframes}
+  \usetheme{Darmstadt}
+  \usecolortheme[named=cornellred]{structure}
+  \setbeamercovered{transparent}
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{theorem}[ams style]
+  \setbeamertemplate{theorems}[numbered]
+  \setbeamercolor{frametitle}{fg=structure}
+  \setbeamertemplate{frametitle}{
+    \raggedleft
+    {\bf \insertframetitle}
+    \par
+  }
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{example}{Example}
+\newtheorem{examples}{Examples}
+\newtheorem{remark}{Remark}
+\newtheorem{question}{Question}
+
+\title
+{Fusing surface and satellite-derived PM observations to \\ determine the impact of international transport on coastal PM$_{2.5}$ concentrations in the western U.S.}
+
+\author
+{Neha Bora \and Tuo Chen \and Dana Cochran \and Kelly Dougan \and Guatam Sabnis \and Chuanping Yu}
+
+\institute[SAMSI]
+{Industrial Math/Stat Modeling Workshop \\ Environmental Protection Agency}
+
+\subject{Talks}
+
+%\AtBeginSubsection[] {
+%  \begin{frame}<beamer>{Outline}
+%  \tableofcontents[currentsection,currentsubsection]
+%  \end{frame}
+%}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%\begin{frame}{Outline}
+%\tableofcontents
+%% You might wish to add the option [pausesections]
+%\end{frame}
+%------------------------------------------Introduction--------------------------------------------------------
+\section*{Introduction}
+\begin{frame}{What we plan to talk about}
+\begin{itemize}
+\item Background
+
+\begin{itemize}
+\item What are PM$_{2.5}$ and AOD?
+\end{itemize}
+
+\item The Problem
+\begin{itemize}
+\item Can we use PM measurements to predict past and/or future PM measurements?
+\item Can we construct a model to predict PM from AOD measurements?
+\item Is there an impact of PM from international sources?
+\end{itemize}
+
+\item Data Sources
+\begin{itemize}
+\item PM sites and data
+\item AOD data
+\item Other covariates
+\end{itemize}
+
+\item Methods
+
+\item Models
+
+\item Experiments
+
+\item Conclusion
+
+
+\end{itemize}
+
+\end{frame}
+%--------------------------------------------------------------------------------------------------------------
+%\subsection*{Background}
+%\begin{frame}{Background}
+%\begin{itemize}
+%
+%\item The Clean Air Act makes regulations for air pollution levels in the U.S.
+%\begin{itemize}
+%\item On the west coast, many places in California have violated the amount of pollution allowed by this act.
+%\item A possible reason for this is the air transport of pollution from international sources over the Pacific Ocean.
+%\end{itemize}
+%\item Measurements of land pollution levels on the coast of California can be compared with satellite measurements of pollutants on the Pacific ocean near the land sites.
+%
+%\end{itemize}
+%\end{frame}
+%--------------------------------------------------------------------------------------------------------------
+\subsection*{Background}
+\begin{frame}{Background}
+\begin{itemize}
+
+\item Clean Air Act
+\begin{itemize}
+\item California violates it
+\item China to blame?
+\end{itemize}
+\item Measure pollutants on land, near California coast
+\item Compare with satellite measurements
+\item informative picture - LA smog
+\end{itemize}
+\end{frame}
+%--------------------------------------------------------------------------------------------------------------
+\subsection*{Background}
+\begin{frame}{PM and AOD}
+\begin{itemize}
+
+\item PM$_{2.5}$ is a particulate matter that is less than $2.5$ micrometers in diameter.
+\item add hair picture - PM 2.5 vs PM 10
+\item Aerosol Optical Depth (AOD) measures the amount of light from the sun blocked by dust and pollutants.
+
+\end{itemize}
+\end{frame}
+%------------------------------------------Data Sources--------------------------------------------------------
+
+\section*{Data Sources}
+\subsection*{PM}
+\begin{frame}{PM}
+\begin{itemize}	
+\item add picture of sites - all sites on west coast, Hawaii
+\item Ground sites of PM$_{2.5}$ measurements, as collected by EPA
+\item Data collected either daily, every three days or every six days.
+\end{itemize}	
+\end{frame}
+%--------------------------------------------------------------------------------------------------------------
+\subsection*{AOD}
+\begin{frame}{AOD}
+\begin{itemize}	
+\item add picture of strip of data
+\item our AOD data only over Pacific Ocean
+\item satellites travel around the Earth once every 16 days.
+\item AOD data is collected at each location least twice a month.
+\end{itemize}		
+\end{frame}
+%------------------------------------------Methods--------------------------------------------------------
+\section*{Methods}
+\begin{frame}{Data Cleaning}
+\begin{itemize}
+\item picked PM sites closest to coast (13 in California, 9 in Hawaii)
+\item add map with sites we chose
+\item Found closest locations of AOD measurements to these sites
+\item Matched data by date of AOD/PM readings
+
+\end{itemize}
+\end{frame}
+%--------------------------------------------------------------------------------------------------------------
+\subsection*{Covariates}
+\begin{frame}{Covariates}
+\begin{itemize}	
+\item wind speed and direction
+\item humidity
+\item planetary boundary layer height
+\item air temperature
+\item added values of these measures at each location at each date
+\end{itemize}
+\end{frame}
+%------------------------------------------Models-----------------------------------------------------------
+\section*{Models}
+\begin{frame}{Models}
+\begin{itemize}	
+\item PM$_{2.5}$ time series
+\item add gif here
+\end{itemize}
+\end{frame}
+%--------------------------------------------------------------------------------------------------------------
+\begin{frame}{Models}
+\begin{itemize}	
+\item Spatial Interpolation of PM$_{2.5}$
+\item add gif/image here
+\end{itemize}
+\end{frame}
+%--------------------------------------------------------------------------------------------------------------
+\begin{frame}{Models}
+\begin{itemize}	
+\item Relationships between AVHRR AOD and surface PM
+\item Yu - add stuff
+\end{itemize}
+\end{frame}
+
+%------------------------------------------Experiments-----------------------------------------------------------
+\section*{Experiments}
+\begin{frame}{}
+	
+\end{frame}
+%-------------------------------------------Conclusions---------------------------------------------------------
+\section*{Conclusions}
+\begin{frame}{Conclusions}
+	
+\end{frame}
+%--------------------------------------------------------------------------------------------------------------
+\subsection*{Future work}
+\begin{frame}{Future work}
+	
+\end{frame}
+%--------------------------------------------------------------------------------------------------------------
+\begin{frame}{Acknowledgments}
+\begin{itemize}
+\item faculty mentors
+\item EPA
+\item We would like to thank the NOAA, specifically Jessica Matthews for helping to explain the satellite data
+\item IMSM
+\item NSF
+\end{itemize}
+\end{frame}
+
+%--------------------------------------------------------------------------------------------------------------
+\begin{frame}{References}
+	\begin{thebibliography}{99}
+	\beamertemplatearticlebibitems
+	
+	\bibitem{liu} 
+	
+	\bibitem{noaa} National Centers for Environmental Information. National Oceanic and Atmospheric Administration. Department of Commerce, n.d. Web. 23 July 2016. \textit{https://www.ncdc.noaa.gov/cdr/atmospheric/avhrr-aerosol-optical-thickness}.
+	
+\bibitem{epa} United States Environmental Protection Agency. AirData. EPA, 5 July 2016. Web. 23 July 2016. \textit{https://www3.epa.gov/airdata/}.
+	
+
+	\end{thebibliography}
+%use this as reference for citations	
+%	
+%	\bibitem{selfridge} \textcolor{black}{J. Brillhart; D. H. Lehmer; J. L. Selfridge; B. Tuckerman; S. S. Wagstaff, Jr., 
+%	Factorizations of $b^n \pm 1$, $b = 2,3,5,6,7,10,11,12$ Up to High Powers, $3\rdd$ edition, Contemporary 
+%	Mathematics, Vol. 22, American Math. Soc., Providence, 2002.}
+%	
+%	\beamertemplatearticlebibitems
+%	\bibitem{erdos} \textcolor{black}{P. Erd\H{o}s, On integers of the form $2^k + p$ and some related problems, 
+%	\textit{Summa Brasil. Math.} \textbf{2} (1950) 113--123.}
+%	
+%	\bibitem{mkozekRS} \textcolor{black}{M. Filaseta, C. Finch, M. Kozek, On powers associated with Sierpi\'nski numbers, 
+%	Riesel numbers and Polignac's conjecture. \textit{J. Number Theory} \textbf{128} (2008), no. 7, 1916--1940.}
+%	
+%	\bibitem{marksenior} \textcolor{black}{M. Filaseta; M. Kozek; C. Nicol; J. Selfridge, Composites that remain composite 
+%	after changing a digit, \textit{J. Comb. Number Theory} \textbf{2} (2010), no. 1, 25--36 (2011).}
+%	\end{thebibliography}
+\end{frame}
+
+\end{document}
