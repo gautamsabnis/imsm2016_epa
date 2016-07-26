@@ -65,6 +65,8 @@ Li et al (2011) studied the approach to use AOD data to predict PM$_{2.5}$ conce
 
 %my paper stuff so far
 Van Donkelaar et al (2015) looked for global trends of PM$_{2.5}$ concentrations from satellite data. Using a decadal mean over the years 2001-2010, in North America, they found a relatively higher concentration of PM in the east coast and in the San Joaquin valley of California. In Asia, they found extremely high concentration, over 60 $\mu g/m^3$ and 80 $\mu g/m^3$ in Northern India and Eastern Asia, respectively. They found that the population-weighted concentrations in East Asia nearly doubled the global mean.
+
+Li et al (2015) investigated whether or not space-time variability of AOD measurements can be used to infer space-time variability of PM readings. Their model resulted in good spacial agreement in the Eastern region but not the central or Western regions of the U.S. Overall, they concluded that the relationship between PM and AOD varies over different locations and times, and that a better prediction model would be one that focuses on a smaller region or time frame.
 %%%%%%
 
 We aim to generate relationships between AOD measurements and surface PM$_{2.5}$ measurements at sites located on the west coast. In addition, we analyze times series models of surface PM$_{2.5}$ measurements at each site. Spatial interpolation is also used on all PM$_{2.5}$ sites in California to help determine a trend in the readings. These images were used to help establish a visualization of high emission events in the state such as wildfires.
@@ -282,12 +284,12 @@ $$\hat{PM} = -0.64 - 0.0176\times AOD - 0.11\times WindSpeed + 0.45\times WindDi
 
 where Season and Year are factor variables. $R^2 = 0.758$.
 
-\begin{figure}[ht!]
-\centering
-\includegraphics[width = 90mm]{residual.pdf}
-\caption{}
-\label{graph5}
-\end{figure}
+%\begin{figure}[ht!]
+%\centering
+%\includegraphics[width = 90mm]{residual.pdf}
+%\caption{}
+%\label{graph5}
+%\end{figure}
 
 We can see from the above plots that there are three outliers. After deleting these outliers, the model became:
 
@@ -300,12 +302,12 @@ Then we did the stepwise to choose the best fit, we get the following model:
 $$\hat{PM} = 3.42 -1.07\times WindSpeed + 0.036\times WindDirection + Season, $$
 where Season is a factor variable. $R^2 = 0.786$.
 
-\begin{figure}[ht!]
-\centering
-\includegraphics[width = 90mm]{residual2.pdf}
-\caption{}
-%\label{graph5}
-\end{figure}
+%\begin{figure}[ht!]
+%\centering
+%\includegraphics[width = 90mm]{residual2.pdf}
+%\caption{}
+%%\label{graph5}
+%\end{figure}
 
 The results are better than the previous model. But we can see from those plots that the residuals still have some trend and some cluster. To figure out if this model is good, we did 5-folder cross validation. The results are as follows:
 
